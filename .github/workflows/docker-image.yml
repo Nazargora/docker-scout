@@ -24,4 +24,5 @@ jobs:
           image: my-node-app
           only-severities: critical
           exit-code: true
-          github-token: dckr_pat_8kck2x2NHpG5jUFJQ01t1W80k-E
+          dockerhub-user: gora04
+          dockerhub-password: N@z@r2027
