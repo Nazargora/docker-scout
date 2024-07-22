@@ -22,5 +22,5 @@ jobs:
           command: cves
           image: my-node-app
           token: "dckr_pat_8kck2x2NHpG5jUFJQ01t1W80k-E"
-          only-severities: critical,high
+          only-severities: critical
           exit-code: true
