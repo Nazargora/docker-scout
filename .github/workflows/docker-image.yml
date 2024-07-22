@@ -1,0 +1,25 @@
+name: Build and Scan Docker Image
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+     
+    steps:
+     - name: Checkout code
+       uses: actions/checkout@v2
+
+     - name: Build and Push Bckend
+       shell: bash
+       run: |
+        docker build -t my-node-app .
+
+     - name: Docker Scout
+       id: docker-scout
+       uses: docker/scout-action@dd36f5b0295baffa006aa6623371f226cc03e506
+       with:
+          command: cves
+          image: my-node-app
+          only-severities: critical,high
+          exit-code: true
