@@ -17,10 +17,11 @@ jobs:
 
      - name: Docker Scout
        id: docker-scout
-       uses: docker/scout-action@dd36f5b0295baffa006aa6623371f226cc03e506
+       if: ${{ github.event_name != 'pull_request_target' }}
+       uses: docker/scout-action@v1
        with:
-          command: "cves"
+          command: cves
           image: my-node-app
-          only-severities: "critical"
+          only-severities: critical
           exit-code: true
           token: "dckr_pat_8kck2x2NHpG5jUFJQ01t1W80k-E"
