@@ -1,5 +1,5 @@
 # Use a more recent Node.js image
-FROM node:18
+FROM node:18.21.0 # Replace with the latest version if available
 
 # Create and change to the app directory
 WORKDIR /usr/src/app
