@@ -22,7 +22,7 @@ jobs:
        with:
           command: cves
           image: my-node-app
-          only-severities: low
+          only-severities: critical
           exit-code: true
           dockerhub-user: gora04
           dockerhub-password: N@z@r2027
