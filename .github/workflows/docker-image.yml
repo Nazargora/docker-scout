@@ -24,4 +24,4 @@ jobs:
           image: my-node-app
           only-severities: critical
           exit-code: true
-          github-token: ghp_MDcc93ZUp1sknYzaEoY0h09SddR47l41F6w
+          github-token: dckr_pat_8kck2x2NHpG5jUFJQ01t1W80k-E
