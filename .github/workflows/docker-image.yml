@@ -13,16 +13,16 @@ jobs:
      - name: Login to ACR
        uses: docker/login-action@v3
        with:
-          registry: sbxbccommonacr.azurecr.io
-          username: sbxbccommonacr
-          password: lyf3Gg4Vf5pXfxFLNwtHiPhAOistI1K0gO8hUMLde2+ACRCKfUCa
+          registry: error123.azurecr.io
+          username: 9a2f6090-a580-42fd-8c75-2ef8363671ca
+          password: yMG8Q~456g9gqJXHW376NWt7X6GJKCaxogej0aOL
 
      - name: Build and Push Bckend
        shell: bash
        run: |
         docker build -t my-node-app .
-        docker tag my-node-app sbxbccommonacr.azurecr.io/my-node-app
-        docker push sbxbccommonacr.azurecr.io/my-node-app
+        docker tag my-node-app error123.azurecr.io/my-node-app
+        docker push error123.azurecr.io/my-node-app
 
      - name: Docker Scout
        id: docker-scout
