@@ -21,8 +21,7 @@ jobs:
        shell: bash
        run: |
         docker build -t my-node-app .
-        docker tag my-node-app error123.azurecr.io/my-node-app
-        docker push error123.azurecr.io/my-node-app
+
 
      - name: Docker Scout
        id: docker-scout
