@@ -35,7 +35,7 @@ jobs:
           exit-code: true
           #dockerhub-user: gora04
           #dockerhub-password: N@z@r2027
-          registry-user: error123
-          registry-password: qjsz8skkiQOSbwwV2Mf+NMrN2gfxcjEhAp0Oqur60f+ACRDvIj61
+          #registry-user: error123
+          #registry-password: qjsz8skkiQOSbwwV2Mf+NMrN2gfxcjEhAp0Oqur60f+ACRDvIj61
        
           
