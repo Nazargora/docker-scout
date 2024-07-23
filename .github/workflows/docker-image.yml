@@ -1,31 +1,26 @@
-name: Build and Scan Docker Image
-
-on: [push, pull_request]
-
+name: build
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 jobs:
   build:
-    runs-on: ubuntu-latest
-     
+    name: Build
+    runs-on: ubuntu-20.04
     steps:
-     - name: Checkout code
-       uses: actions/checkout@v2
-     - name: Login to ACR
-       uses: azure/docker-login@v1
-       with:
-          login-server: error123.azurecr.io
-          username: error123
-          password: qjsz8skkiQOSbwwV2Mf+NMrN2gfxcjEhAp0Oqur60f+ACRDvIj61
-       
-     - name: Run Docker Scout
-       run: |
-          docker build -t my-node-app .
-          docker tag my-node-app error123.azurecr.io/my-node-app
-          docker push error123.azurecr.io/my-node-app
-          
-     - name: Run Trivy vulnerability scanner in fs mode
-       uses: aquasecurity/trivy-action@0.20.0
-       with:
-        scan-type: 'fs'
-        scan-ref: '.'
-        trivy-config: trivy.yaml
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build an image from Dockerfile
+        run: |
+          docker build -t docker.io/my-organization/my-app:${{ github.sha }} .
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@0.20.0
+        with:
+          image-ref: 'docker.io/my-organization/my-app:${{ github.sha }}'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
           
