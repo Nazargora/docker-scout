@@ -22,14 +22,10 @@ jobs:
           docker tag my-node-app error123.azurecr.io/my-node-app
           docker push error123.azurecr.io/my-node-app
           
-     - name: Run Trivy vulnerability scanner
+     - name: Run Trivy vulnerability scanner in fs mode
        uses: aquasecurity/trivy-action@0.20.0
        with:
-          image-ref: 'error123.azurecr.io/my-node-app:latest'
-          format: 'table'
-          exit-code: '1'
-          ignore-unfixed: true
-          vuln-type: 'os,library'
-          severity: 'CRITICAL,HIGH,LOW,MEDIUM'
-       
+        scan-type: 'fs'
+        scan-ref: '.'
+        trivy-config: trivy.yaml
           
