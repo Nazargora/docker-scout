@@ -15,7 +15,7 @@ jobs:
        with:
           registry: sbxbccommonacr.azurecr.io
           username: sbxbccommonacr
-          password: 1B3Lspwj+eQxAOgx89g/NFQoQk1l/x/3i/mQRr4yIw+ACRAhSFiB
+          password: lyf3Gg4Vf5pXfxFLNwtHiPhAOistI1K0gO8hUMLde2+ACRCKfUCa
 
      - name: Build and Push Bckend
        shell: bash
