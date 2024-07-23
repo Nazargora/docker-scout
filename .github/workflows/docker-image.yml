@@ -14,6 +14,8 @@ jobs:
        shell: bash
        run: |
         docker build -t my-node-app .
+          docker tag my-node-app error123.azurecr.io/my-node-app
+        docker push error123.azurecr.io/my-node-app
 
 
      - name: Docker Scout
@@ -27,7 +29,7 @@ jobs:
           exit-code: true
           #dockerhub-user: gora04
           #dockerhub-password: N@z@r2027
-          registry-user: dddddd 
-          registry-password: fz1aUYDS1lmqDIXHANe2vo1GH6u6ohM8rZcfqPREEo+ACRCkINsJ
+          registry-user: error123
+          registry-password: qjsz8skkiQOSbwwV2Mf+NMrN2gfxcjEhAp0Oqur60f+ACRDvIj61
        
           
