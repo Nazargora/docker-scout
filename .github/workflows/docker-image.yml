@@ -9,6 +9,13 @@ jobs:
     steps:
      - name: Checkout code
        uses: actions/checkout@v2
+       
+     - name: Registry Login 
+       uses: azure/docker-login@v1
+       with: # to be changed; this is the betterco-dev registered application. we should have a new one bootstrapped from terraform;
+        login-server: sbxbccommonacr.azurecr.io
+        username: sbxbccommonacr
+        password: lyf3Gg4Vf5pXfxFLNwtHiPhAOistI1K0gO8hUMLde2+ACRCKfUCa
 
      - name: Build and Push Bckend
        shell: bash
@@ -26,6 +33,5 @@ jobs:
           exit-code: true
           registry-user: sbxbccommonacr
           registry-password: lyf3Gg4Vf5pXfxFLNwtHiPhAOistI1K0gO8hUMLde2+ACRCKfUCa
-          github-token: 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 
           #dockerhub-user: gora04
           #dockerhub-password: N@z@r2027
