@@ -34,6 +34,6 @@ jobs:
           exit-code: true
           registry-user: 9a2f6090-a580-42fd-8c75-2ef8363671ca
           registry-password: yMG8Q~456g9gqJXHW376NWt7X6GJKCaxogej0aOL
-          #github-token: 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
+          github-token: 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
           #dockerhub-user: gora04
           #dockerhub-password: N@z@r2027
