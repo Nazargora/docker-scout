@@ -1,9 +1,13 @@
 general:
   vulnerabilities:
-    - CVE-2024-32002 
+    - CVE-2024-32002
     - CVE-2023-5841
-    - CVE-2023-5841  
-    - CVE-2023-45853 
-    - CVE-2023-45853   
+    - CVE-2023-45853
+  bestPracticeViolations:
+    - CIS-DI-0005
+    - DKL-LI-0003
+    - CIS-DI-0006
+    - DKL-DI-0006
+
 
 
