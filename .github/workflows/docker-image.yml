@@ -10,12 +10,12 @@ jobs:
      - name: Checkout code
        uses: actions/checkout@v2
        
-     - name: Registry Login 
-       uses: azure/docker-login@v1
-       with: # to be changed; this is the betterco-dev registered application. we should have a new one bootstrapped from terraform;
-        login-server: sbxbccommonacr.azurecr.io
-        username: sbxbccommonacr
-        password: lyf3Gg4Vf5pXfxFLNwtHiPhAOistI1K0gO8hUMLde2+ACRCKfUCa
+     - name: Login to ACR
+       uses: docker/login-action@v3
+       with:
+          registry: sbxbccommonacr.azurecr.io
+          username: sbxbccommonacr
+          password: lyf3Gg4Vf5pXfxFLNwtHiPhAOistI1K0gO8hUMLde2+ACRCKfUCa
 
      - name: Build and Push Bckend
        shell: bash
