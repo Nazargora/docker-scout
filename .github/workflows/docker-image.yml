@@ -10,14 +10,24 @@ jobs:
      - name: Checkout code
        uses: actions/checkout@v2
      - name: Login to ACR
-       uses: docker/login-action@v3
+       uses: azure/docker-login@v1
        with:
-          registry: error123.azurecr.io
+          login-server: error123.azurecr.io
           username: error123
           password: qjsz8skkiQOSbwwV2Mf+NMrN2gfxcjEhAp0Oqur60f+ACRDvIj61
        
      - name: Run Docker Scout
        run: |
-          docker scout cves error123.azurecr.io/my-node-app:latest
+          docker build -t my-node-app .
+          
+     - name: Run Trivy vulnerability scanner
+       uses: aquasecurity/trivy-action@0.20.0
+       with:
+          image-ref: 'my-node-app'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
        
           
