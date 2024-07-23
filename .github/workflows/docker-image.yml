@@ -22,5 +22,5 @@ jobs:
           exit-code: '1'
           ignore-unfixed: false
           vuln-type: 'os,library'
-          severity: 'LOW,MEDIUM,HIGH,CRITICAL'
+          severity: 'CRITICAL'
 
