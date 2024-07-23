@@ -14,8 +14,8 @@ jobs:
        uses: docker/login-action@v3
        with:
           registry: sbxbccommonacr.azurecr.io
-          username: sbxbccommonacr
-          password: lyf3Gg4Vf5pXfxFLNwtHiPhAOistI1K0gO8hUMLde2+ACRCKfUCa
+          username: nazar
+          password: 1B3Lspwj+eQxAOgx89g/NFQoQk1l/x/3i/mQRr4yIw+ACRAhSFiB
 
      - name: Build and Push Bckend
        shell: bash
