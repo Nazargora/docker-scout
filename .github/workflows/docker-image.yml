@@ -9,6 +9,12 @@ jobs:
     steps:
      - name: Checkout code
        uses: actions/checkout@v2
+     - name: Login to ACR
+       uses: docker/login-action@v3
+       with:
+          registry: error123.azurecr.io
+          username: error123
+          password: qjsz8skkiQOSbwwV2Mf+NMrN2gfxcjEhAp0Oqur60f+ACRDvIj61
        
      - name: Build and Push Bckend
        shell: bash
