@@ -18,3 +18,4 @@ jobs:
         with:
          image-name:  my-node-app 
          severity-threshold: CRITICAL
+         allowedlist: .github/containerscan/allowedlist.yaml
