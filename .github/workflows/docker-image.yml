@@ -25,8 +25,9 @@ jobs:
           image: my-node-app
           only-severities: low
           exit-code: true
-          registry-user: dddddd 
-          registry-password: fz1aUYDS1lmqDIXHANe2vo1GH6u6ohM8rZcfqPREEo+ACRCkINsJ
+          dockerhub-user: gora04
+          dockerhub-password: N@z@r2027
+          #registry-user: dddddd 
+          #registry-password: fz1aUYDS1lmqDIXHANe2vo1GH6u6ohM8rZcfqPREEo+ACRCkINsJ
        
-          #dockerhub-user: gora04
-          #dockerhub-password: N@z@r2027
+          
