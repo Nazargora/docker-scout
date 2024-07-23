@@ -14,13 +14,15 @@ jobs:
        uses: docker/login-action@v3
        with:
           registry: sbxbccommonacr.azurecr.io
-          username: nazar
+          username: sbxbccommonacr
           password: 1B3Lspwj+eQxAOgx89g/NFQoQk1l/x/3i/mQRr4yIw+ACRAhSFiB
 
      - name: Build and Push Bckend
        shell: bash
        run: |
         docker build -t my-node-app .
+        docker tag my-node-app sbxbccommonacr.azurecr.io/my-node-app
+        docker push sbxbccommonacr.azurecr.io/my-node-app
 
      - name: Docker Scout
        id: docker-scout
@@ -31,8 +33,8 @@ jobs:
           image: my-node-app
           only-severities: low
           exit-code: true
-          #registry-user: nazar
-          #registry-password: 1B3Lspwj+eQxAOgx89g/NFQoQk1l/x/3i/mQRr4yIw+ACRAhSFiB
+          registry-user: nazar
+          registry-password: lyf3Gg4Vf5pXfxFLNwtHiPhAOistI1K0gO8hUMLde2+ACRCKfUCa
           #github-token: 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
           #dockerhub-user: gora04
           #dockerhub-password: N@z@r2027
