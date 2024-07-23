@@ -16,26 +16,8 @@ jobs:
           username: error123
           password: qjsz8skkiQOSbwwV2Mf+NMrN2gfxcjEhAp0Oqur60f+ACRDvIj61
        
-     - name: Build and Push Bckend
-       shell: bash
+     - name: Run Docker Scout
        run: |
-        docker build -t my-node-app .
-        docker tag my-node-app error123.azurecr.io/my-node-app
-        docker push error123.azurecr.io/my-node-app
-
-
-     - name: Docker Scout
-       id: docker-scout
-       if: ${{ github.event_name != 'pull_request_target' }}
-       uses: docker/scout-action@v1.10.0
-       with:
-          command: cves
-          image: my-node-app
-          only-severities: low
-          exit-code: true
-          #dockerhub-user: gora04
-          #dockerhub-password: N@z@r2027
-          #registry-user: error123
-          #registry-password: qjsz8skkiQOSbwwV2Mf+NMrN2gfxcjEhAp0Oqur60f+ACRDvIj61
+          docker scout cves error123.azurecr.io/my-node-app:latest
        
           
